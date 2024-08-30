@@ -86,6 +86,7 @@ void setup() {
   */
   int pin = 38;
   // Merged ledcSetup and ledcAttachPin functions
+  // https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/api/ledc.html
   ledcAttach(pin, 10000, 8); // ledcAttach(uint8_t pin, uint32_t freq, uint8_t resolution)
   ledcWrite(0, 130);
 
