@@ -79,8 +79,14 @@ void setup() {
 
 
   //set brightness
+  /*
   ledcSetup(0, 10000, 8);
   ledcAttachPin(38, 0);
+  ledcWrite(0, 130);
+  */
+  int pin = 38;
+  // Merged ledcSetup and ledcAttachPin functions
+  ledcAttach(pin, 10000, 8); // ledcAttach(uint8_t pin, uint32_t freq, uint8_t resolution)
   ledcWrite(0, 130);
 
   //connect board to wifi , if cant, esp32 will make wifi network, connect to that network with password "password"
